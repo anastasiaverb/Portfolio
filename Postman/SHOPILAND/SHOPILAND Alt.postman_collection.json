@@ -1,0 +1,53 @@
+{
+	"info": {
+		"_postman_id": "22a0d163-d92a-4543-b2c4-8c5bb34bf03c",
+		"name": "SHOPILAND Alt",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "32904460"
+	},
+	"item": [
+		{
+			"name": "Главная страница",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://shopiland.ru/",
+					"protocol": "https",
+					"host": [
+						"shopiland",
+						"ru"
+					],
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					"pm.test(\"Body have GTM \", function () {\r",
+					"    pm.expect(pm.response.text()).to.include('alt=');\r",
+					"});"
+				]
+			}
+		}
+	]
+}
